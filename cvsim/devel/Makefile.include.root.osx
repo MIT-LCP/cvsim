@@ -1,0 +1,11 @@
+# JAVA_HOME	= /Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/  # set as necessary 
+JDK_HOME	= $(JAVA_HOME)
+JRE_HOME	= $(JAVA_HOME)
+
+SWIG		= swig
+CC		= gcc
+CFLAGS          = -O2 -fno-strict-aliasing -Wall -fno-common \
+		  -I/System/Library/Frameworks/JavaVM.framework/Headers/
+BUILDLIB	= gcc -shared
+LIB6		= java/classes/libC6_comp_backend.jnilib
+LIB21		= java/classes/libC21_comp_backend.jnilib

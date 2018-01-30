@@ -1,0 +1,166 @@
+/* This file contains the initialization routine for the parameter vector of
+ * the simulator. All parameters of the hemodynamic and reflex systems are 
+ * defined here.
+ *
+ * Thomas Heldt   January 30th, 2002
+ * Last modified  April 11th, 2002
+ */
+#include "initialization.h"
+
+int initialization(Parameter_vector *tmp)
+{
+  tmp -> vec[0] =     90.0;      // Arterial set-point
+  tmp -> vec[1] =     18.0;      // ABR scaling factor
+  tmp -> vec[2] =      0.009;    // RR-symp. gain
+  tmp -> vec[3] =      0.009; // RR-parasymp. gain 
+  tmp -> vec[4] =     -0.057; // ABR resistance gain to up compartment
+  tmp -> vec[5] =     -0.057; // ABR resistance gain to k compartment
+  tmp -> vec[6] =     -0.057; // ABR resistance gain to sp compartment
+  tmp -> vec[7] =     -0.057; // ABR resistance gain to ll compartment
+  tmp -> vec[8] =      5.3;  // ABR venous tone gain to up compartment
+  tmp -> vec[9] =      1.3;  // ABR venous tone gain to k compartment
+  tmp -> vec[10] =    13.3;  // ABR venous tone gain to sp compartment 
+  tmp -> vec[11] =     6.7;  // ABR venous tone gain to ll compartment
+  tmp -> vec[12] =     0.021*0.0;    // ABR RV contractility gain
+  tmp -> vec[13] =     0.007*0.0;    // ABR LV contractility gain
+  tmp -> vec[14] =   -25.0;      // Sensed pressure off-set during tilt
+  tmp -> vec[15] =     3.0;      // Cardio-pulmonary set-point
+  tmp -> vec[16] =     5.0;      // CPR scaling factor
+  tmp -> vec[17] =    -0.052;    // CPR resistance gain to up compartment   
+  tmp -> vec[18] =    -0.052;    // CPR resistance gain to k compartment
+  tmp -> vec[19] =    -0.052;    // CPR resistance gain to sp compartment 
+  tmp -> vec[20] =    -0.052;    // CPR resistance gain to ll compartment
+  tmp -> vec[21] =    13.5;      // CPR venous tone gain to up compartment
+  tmp -> vec[22] =     2.7;      // CPR venous tone gain to k compartment
+  tmp -> vec[23] =    64.0;      // CPR venous tone gain to sp compartment
+  tmp -> vec[24] =    30.0;      // CPR venous tone gain to ll compartment
+  tmp -> vec[25] =     0.5;      // Delay of the parasymp. impulse response
+  tmp -> vec[26] =     0.7;      // Peak of the parasymp. impulse response
+  tmp -> vec[27] =     1.0;      // End of the parasymp. impulse resonse
+  tmp -> vec[28] =     1.0;      // Delay of the sympathetic impulse response
+  tmp -> vec[29] =     3.0;      // Peak of the sympathetic impulse response
+  tmp -> vec[30] =    20.0;      // End of the sympathetic impulse response
+  tmp -> vec[31] =    -4.0;      // Intra-thoracic pressure
+  tmp -> vec[32] =     7.0;      // Pbias_max at sp compartment
+  tmp -> vec[33] =    40.0;      // Pbias_max at ll compartment
+  tmp -> vec[34] =     5.0;      // Pbias_max at ab compartment
+  tmp -> vec[35] =     2.0;      // Arterial compliance
+  tmp -> vec[36] =     8.0;      // Compliance of upper body compartment
+  tmp -> vec[37] =     5.0;      // Compliance of kidney compartment
+  tmp -> vec[38] =    55.0;      // Compliance of splanchnic compartment  
+  tmp -> vec[39] =    20.0;      // Compliance of lower body compartment
+  tmp -> vec[40] =    25.0;      // Compliance of abdominal venous comp.
+  tmp -> vec[41] =    15.0;      // Compliance of inferior vena cava
+  tmp -> vec[42] =     2.0;      // Compliance of superior vena cava
+  tmp -> vec[43] =     3.3;      // RA diastolic compliance
+  tmp -> vec[44] =     1.35;      // RA systolic compliance
+  tmp -> vec[45] =    14.3;      // RV diastolic compliance
+  tmp -> vec[46] =     0.77;      // RV systolic compliance
+  tmp -> vec[47] =     4.3;      // Compliance of pul. arterial compartment
+  tmp -> vec[48] =     8.4;      // Compliance of pul. venous compartment
+  tmp -> vec[49] =     2.0;      // LA diastolic compliance
+  tmp -> vec[50] =     1.64;      // LA systolic compliance
+  tmp -> vec[51] =     7.7;      // LV diastolic compliance
+  tmp -> vec[52] =     0.4;      // LV systolic compliance
+  //  tmp -> vec[53] =     3.9;      // Resistance of upper body compartment
+  tmp -> vec[53] =     4.2;      // Resistance of upper body compartment
+  tmp -> vec[54] =     0.23;     // Resistance of upper body outflow
+  //  tmp -> vec[55] =     4.1;      // Resistance of kidney compartment
+  tmp -> vec[55] =     4.5;      // Resistance of kidney compartment
+  tmp -> vec[56] =     0.3;      // Resistance of kidney outflow
+  //  tmp -> vec[57] =     3.0;      // Resistance of splanchnic compartment
+  tmp -> vec[57] =     4.0;      // Resistance of splanchnic compartment
+  tmp -> vec[58] =     0.17;     // Resistance of splanchnic outflow
+  //  tmp -> vec[59] =     9.0;      // Resistance of lower body compartment
+  tmp -> vec[59] =    12.0;      // Resistance of lower body compartment
+  tmp -> vec[60] =     0.3;      // Resistance of lower body outflow
+  tmp -> vec[61] =     0.01;     // Resistance of abdominal venous compartment
+  tmp -> vec[62] =     0.015;    // Resistance of inferior vena cava comp.
+  tmp -> vec[63] =     0.06;     // Resistance of superior vena cava comp.
+  tmp -> vec[64] =     0.003;    // Resistance of tricuspid valve
+  tmp -> vec[65] =     0.003;    // Resistance of right ventricular outflow
+  tmp -> vec[66] =     0.08;     // Resistance of pulmonary microcirculation
+  tmp -> vec[67] =     0.01;     // Resistance of pulmonary veins / LV inflow
+  tmp -> vec[68] =     0.0008;   // Resistance of mitral valve
+  tmp -> vec[69] =     0.006;    // Resistance of left ventricular outflow
+  tmp -> vec[70] =  5950.0;      // Total blood volume   
+  tmp -> vec[71] =  1500.0;      // Maximal increase in sp distending vol.
+  tmp -> vec[72] =  1000.0;      // Maximal increase in ll distending vol.
+  tmp -> vec[73] =   650.0;      // Maximal increase in ab distending vol.
+  tmp -> vec[74] =   300.0;      // Maximal blood volume loss during tilt
+  tmp -> vec[75] =  4200.0;      // Total zero pressure filling volume
+  tmp -> vec[76] =   715.0;      // Volume of arterial compartment
+  tmp -> vec[77] =   650.0;      // ZPFV of upper body compartment
+  tmp -> vec[78] =   150.0;      // ZPFV of kidney compartment
+  tmp -> vec[79] =  1300.0;      // ZPFV of splanchnic compartment
+  tmp -> vec[80] =   350.0;      // ZPFV of lower body compartment
+  tmp -> vec[81] =   250.0;      // ZPFV of abdominal venous compartment
+  tmp -> vec[82] =    75.0;      // ZPFV of inferior vena cava
+  tmp -> vec[83] =    10.0;      // ZPFV of superior vena cava
+  tmp -> vec[84] =    10.0;      // ZPFV of right atrium
+  tmp -> vec[85] =    50.0;      // ZPFV of right ventricle
+  tmp -> vec[86] =    90.0;      // ZPFV of pulmonary arteries
+  tmp -> vec[87] =   490.0;      // ZPFV of pulmonary veins
+  tmp -> vec[88] =    10.0;      // ZPFV of left atrium
+  tmp -> vec[89] =    50.0;      // ZPFV of left ventricle
+  tmp -> vec[90] =    56.0;      // Nominal heart rate
+  tmp -> vec[91] =    23.6;      // Tilt angle
+  tmp -> vec[92] =     2.0;      // Time to max. tilt angle (i.e. tilt time)
+  tmp -> vec[93] =   200.0;      // Tilt onset time
+  tmp -> vec[94] =   200.0;      // Duration in upright posture
+  tmp -> vec[95] =     2.0;      // Maximal external negative pressure
+  tmp -> vec[96] =   500.0;      // Volume loss during LBNP
+  tmp -> vec[97] =     0.1;      // Compliance of aortic arch compliance
+  tmp -> vec[98] =     0.2;      // Compliance of upper thoracic aorta
+  tmp -> vec[99] =     0.2;      // Compliance of lower thoracic aorta
+  tmp -> vec[100] =    0.4;      // Compliance of upper body arteries
+  tmp -> vec[101] =    0.2;      // Compliance of abdominal aorta
+  tmp -> vec[102] =    0.2;      // Compliance of renal arteries
+  tmp -> vec[103] =    0.4;      // Compliance of splanchnic arteries
+  tmp -> vec[104] =    0.4;      // Compliance of leg arteries and arterioles
+  tmp -> vec[105] =    0.04;     // Resistance of upper thoracic aorta
+  tmp -> vec[106] =    0.02;     // Resistance of head arteries
+  tmp -> vec[107] =    0.03;     // Resistance of lower thoracic aorta
+  tmp -> vec[108] =    0.03;     // Resistance of abdominal aorta
+  tmp -> vec[109] =    0.02;     // Resistance of renal arteries 
+  tmp -> vec[110] =    0.02;     // Resistance of splanchnic arteries
+  tmp -> vec[111] =    0.06;     // Resistance of leg arteries
+  tmp -> vec[112] =    5.0;
+  tmp -> vec[113] =    8.0;
+  tmp -> vec[114] =   40.0;      // End of the sympathetic impulse response
+  tmp -> vec[115] =    2.0;
+  tmp -> vec[116] =    5.0;
+  tmp -> vec[117] =   30.0;      // End of the sympathetic impulse response
+  tmp -> vec[118] =    0.19;     // PR-interval
+  tmp -> vec[119] =    0.25;     // Atrial systole
+  tmp -> vec[120] =    0.37;     // Ventricular systole
+  tmp -> vec[121] =   10.0;
+  tmp -> vec[122] =    4.5;
+  tmp -> vec[123] =   20.0;
+  tmp -> vec[124] =   16.0;
+  tmp -> vec[125] =   14.5;
+  tmp -> vec[126] =    0.0;
+  tmp -> vec[127] =   10.0;
+  tmp -> vec[128] =  105.6;
+  tmp -> vec[129] =   20.0;
+  tmp -> vec[130] =   14.5;
+  tmp -> vec[131] =    0.0;
+  tmp -> vec[132] =   10.0;
+  tmp -> vec[133] =  105.6;
+  tmp -> vec[134] =   14.5;
+  tmp -> vec[135] =    6.0;
+  tmp -> vec[136] =   21.0;       // V aortic arch
+  tmp -> vec[137] =    5.0;       // V upper thoracic aorta
+  tmp -> vec[138] =  150.0;       // V lower thoracic aorta
+  tmp -> vec[139] =   16.0;       // V upper body arteries
+  tmp -> vec[140] =   10.0;       // V abdominal aorta
+  tmp -> vec[141] =   20.0;       // V renal arteries
+  tmp -> vec[142] =   50.0;       // V splanchnic arteries
+  tmp -> vec[143] =   50.0;       // V leg arteries
+  tmp -> vec[144] =  169.3;       // Body height
+  tmp -> vec[145] =   70.2;       // Body weight
+  tmp -> vec[146] =    1.83;      // Body surface area
+
+
+  return 0;
+}

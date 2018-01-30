@@ -1,0 +1,76 @@
+AbstractTreeTableModel.java - Part of the parameter treetable; From
+the online Sun tutorial (not well documented)
+
+all_compile.sh - Script to compile the GUI (the C, SWIG, and Java code)	
+
+ControlPanel.java - Creates buttons to stop and start the simulation
+and turn the reflex control loops on and off. Also creates the
+SwingWorker thread, where all the simulation calculations take place
+
+CreatePlotDialog.java - Creates a dialog window with a tabbed pane for
+creating and formatting the plot
+
+CSimulation.java - This class is the bridge between the SWIG-generated
+class files and the rest of the GUI; Loads the C library and
+initializes the Java-wrapped C structures
+
+CVSim.java - Contains the main() method; Creates and shows the GUI on
+the event-dispatching thread
+
+DynamicTreeTableModel.java - Part of the parameter treetable; From the
+online Sun tutorial with minor modifications (not well documented)
+
+gui.java - create main GUI window and show it
+
+java_compile.sh - script to compile the Java code only	
+
+JTreeTable.java - Part of the parameter treetable; From the online Sun
+tutorial 
+
+ParameterDirectory.java - Part of the parameter treetable; Creates a
+parameter directory in the treetable
+
+ParameterFrame.java - Part of the parameter treetable; Creates
+internal frame with editable parameter treetable
+
+Parameter.java - Part of the parameter treetable; Creates a parameter
+with name, value, and units in the parameter treetable
+
+ParameterModel.java - Part of the parameter treetable; From the
+online Sun tutorial with minor modifications (not well documented)
+
+PlotDialog.java - Creates dialog window with Plot, frequency slider,
+and speed slider
+
+Plot.java - Custom plotter, extension of JPanel (not an extension of
+JCanvas, like I said the other day); Attempt at "incremental paint",
+first draw the plot window and save it as a background image; Then
+draw the trace on top of the image; LOTS of problems with this
+implementation
+
+remove.sh - Get rid of all the SWIG-generated files and class files
+
+RingBuffer.java - Simple ring buffer; No synchronization      
+
+SimThread.java - initializes the simuilation and Java-wrapped C structs;
+Contains the doWork() method, where all the simulation calculations take place
+
+SpringUtilities.java - Utility method for greating grid layout; From Sun
+
+SwingWorker.java - Swing worker thread from Sun 
+
+Timer.java - Timer class for measuring performance; Ignore	
+
+Trace.java - Contains trace data in the form of x,y points; Also
+contains the color of the trace, the name of the x and y data,and the
+units of the x and y data
+
+TreeTableModelAdapter.java -  Part of the parameter treetable; From
+the online Sun tutorial (not well documented)
+
+TreeTableModel.java -  Part of the parameter treetable; From
+the online Sun tutorial (not well documented)
+
+TxtLabel.java - Written by Matt Oefinger (another member of the
+lab);Contains information for drawing strings - x and y location,
+color, text, and rotation

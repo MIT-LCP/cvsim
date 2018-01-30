@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>CVSim GUI Lists</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+
+<body>
+
+<a name="bugs"></a>
+<h3> Bug List </h3>
+
+<table>
+<col width="5%">
+<col width="85%">
+<col width="10%">
+
+<tr>
+     <th> Number </th> 
+     <th> Description </th>
+     <th> Priority </th>
+</tr>
+<tr class="odd">
+     <td> 1 </td>
+     <td> Cannot use Java Web Start to launch CVSim on Athena Sun machines </td>
+     <td> High </td>
+</tr>
+<tr class="even">
+     <td> 2 </td>
+     <td> Cannot use Java Web Start to launch CVSim on Athena SGI machines </td>
+     <td> High </td>
+</tr>
+<tr class="odd">
+     <td> 3 </td>
+     <td> The turning-point algorithm used to compress the simulation
+     data needs to be implemented in the Java code, not in the C code
+     where it is currently implemented. Under the current
+     implementation, parameter updates made via the GUI are not passed
+     to the underlying simulation until the turning-point cycle is
+     complete. This causes the turning-point algorithm to miss some
+     peaks and troughs in the dynamic response. </td>
+     <td> High </td>
+</tr>
+<tr class="even">
+     <td> 4 </td>
+     <td> Set minimum sizes for GUI components </td>
+     <td> High </td>
+</tr>
+<tr class="odd">
+     <td> 5 </td> 
+     <td> When the user exits patient mode, close patient history windows. </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 6 </td>
+     <td> When multiple x and y scales are displayed on the XY
+     plotter, new y scales are added to the right of the old y scales while
+     new x scales are added below the old x scales. One of these needs to
+     be switched. Corresponding x and y scales should be aligned in an
+     L shape. </td>
+     <td> Medium </td>
+</tr>
+<tr class="odd">
+     <td> 7 </td>
+     <td> If a plot window is resized when the simulation is stopped,
+     the traces are not rescaled until the simulation is restarted </td>
+     <td> Low </td>
+</tr>
+<tr class="even">
+     <td> 8 </td>
+     <td> The plot y scales are not painted properly when new traces
+     are added in single-axis mode. (This problem occurs on Mac only.) </td>
+     <td> Low </td>
+</tr>
+
+<tr class="odd">
+     <td> 9 </td>
+     <td> Alphabetize variables in the output table </td>
+     <td> Low </td>
+</tr>
+<tr class="even">
+     <td> 10 </td>
+     <td> Get rid of aliasing effects when drawing traces </td>
+     <td> Low </td>
+</tr>
+
+</table>
+
+<br><br>
+<a name="newfeatures"></a>
+<h3> New Feature Requests </h3>
+
+<table>
+
+<col width="5%">
+<col width="85%">
+<col width="10%">
+
+<tr> 
+     <th> Number </th>
+     <th> Description </th>
+     <th> Priority </th>
+</tr>
+<tr class="odd">
+     <td> 1 </td>
+     <td> Ability to define simulation parameters as a function of time </td>
+     <td> High</td>
+</tr>
+<tr class="even">
+     <td> 2 </td>
+     <td> Ability to plot simulation parameters </td>
+     <td> High </td>
+</tr> 
+<tr class="odd">
+     <td> 3 </td>
+     <td> Ability to save simulation output data </td>
+     <td> High </td>
+</tr>
+<tr class="even">
+     <td> 4 </td>
+     <td> Ability to save simulation parameter data </td>
+     <td> High </td>
+</tr>
+<tr class="odd">
+     <td> 5 </td>
+     <td> Ability to save plot data </td>
+     <td> High </td>
+</tr>
+<tr class="even"> 
+     <td> 6 </td>
+     <td> Add time axis to strip chart </td>
+     <td> High </td>
+</tr>
+<tr class="odd"> 
+     <td> 7 </td>
+     <td> Ability to save plots as image files </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 8 </td>
+     <td> Ability to print plots </td>
+     <td> Medium </td> 
+</tr>
+<tr class="odd"> 
+     <td> 9 </td>
+     <td> Add ability to reset the simulation (without restarting the application) </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 10 </td>
+     <td> Add cardiac output to simulation outputs </td>
+     <td> Medium </td>
+<tr>
+<tr class="odd"> 
+     <td> 11 </td>
+     <td> Add stroke volume to simulation outputs </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 12 </td>
+     <td> Add auto-scaling ability to plots </td>
+     <td> Medium </td>
+</tr>
+<tr class="odd">
+     <td> 13 </td>
+     <td> When the user selects a parameter in the parameter table, highlight the corresponding anatomical region in the graphics panel. </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 14 </td>
+     <td> When the user mouses over a circuit element in the graphics panel, highlight the corresponding parameters in the parameter table. </td>
+     <td> Medium </td>
+</tr>
+<tr class="odd">
+     <td> 15 </td>
+     <td> When the user clicks on a circuit element in the graphics panel, filter the parameter table to display only the corresponding parameters. </td>
+     <td> Medium </td>
+</tr>
+<tr class="even">
+     <td> 16 </td>
+     <td> Add button to reset the parameter table filtering. (Currently, to reset the parameter table filtering, the user has to set the "Show Location:" dropdown menu in the parameter panel to "ALL".) </td>
+     <td> Low </td>
+</tr>
+<tr class="odd"> 
+     <td> 17 </td>
+     <td> Add redraw button to plot windows </td>
+     <td> Low </td>
+</tr>
+<tr class="even">
+     <td> 18 </td>
+     <td> Add tool tips to the controls in the parameter panel </td>
+     <td> Low </td>
+</tr>
+<tr class="odd">
+     <td> 19 </td>
+     <td> Add tool tips to the controls in the output panel </td>
+     <td> Low </td>
+</tr>
+<tr class="even"> 
+     <td> 20 </td>
+     <td> Ability to save experimental notes as part of the dataset </td>
+     <td> Low </td>
+</tr>
+<tr class="odd">
+     <td> 21 </td>
+     <td> Add status window for displaying messages to the user </td>
+     <td> Low </td>
+</tr>
+<tr class="even">
+     <td> 22 </td>
+     <td> Add log indicator that periodically reminds the user that they are logging data </td>
+     <td> Low </td>
+</tr>
+<tr class="odd">
+     <td> 23 </td>
+     <td> Add log indicator that periodically reminds the user that they are logging data </td>
+     <td> Low </td>
+</tr>
+<tr class="even"> 
+     <td>24</td>
+     <td>Include units in the list of simulation outputs in the plot variable combo boxes</td>
+     <td>Low</td>
+</tr>
+<tr class="odd">  
+     <td> 25 </td>
+     <td> Modify the simulation to generate cardiac output - venous return curves </td>
+     <td> Low </td>
+</tr>
+<tr class="even">
+     <td> 26 </td>
+     <td> Ability to label plot axes </td>
+     <td> Low </td>
+</tr>
+<tr class="odd" >
+     <td> 27 </td>
+     <td> Ability to label plot title </td>
+     <td> Low </td>
+</tr>
+<tr class="even" >
+     <td> 28 </td>
+     <td> Add "Exit Patient Mode" menu item to Patient menu </td>
+     <td> Low </td>
+</tr>
+
+</table>
+
+
+<br><br>
+<a name="wish"></a>
+<h3> Wish List </h3>
+
+<table>
+<col width="5%">
+<col width="85%">
+
+<tr> 
+     <th> Number </th>
+     <th> Description </th>
+</tr>
+
+<tr class="odd">
+     <td> 1 </td>
+     <td> Rewrite simulation in Java </td>
+</tr>
+<tr class="even">
+     <td> 2 </td>
+     <td> Combine 6-compartment simulation and 21-compartment simulation into one simulation with compartment flag</td>
+</tr>
+
+<tr class="odd">
+     <td> 3 </td>
+     <td> Use Ant instead of make as a build tool </td>
+</tr>
+<tr class="even">
+     <td> 4 </td>
+     <td> Upgrade to Java 1.6 </td>
+</tr>
+<tr class="odd">
+     <td> 5 </td>
+     <td> Redo anatomical and circuit graphics in SVG </td>
+</tr>
+<tr class="even">
+     <td> 6 </td>
+     <td> Create a test harness for the CVSim GUI code </td>
+</tr>
+
+</table>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+
+</html>

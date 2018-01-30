@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage[pdftex]{hyperref}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{CVSim GUI Developer's Guide}
+\author{Catherine Dunn}
+\maketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Acknowledgments}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This implementation of CVSim is the work of Catherine Dunn with support
+by Thomas Heldt and contributions from Brandon Pierquet and Ali Saeed. \\
+
+\noindent Previous implementations were written by Bob Sah (1983), George Moody (1985),
+Tim Davis (1989), Rama Mukkamala (2001), Thomas Heldt (2002), and by Eun Bo
+Shim and his students (2003). The circulatory model used in CVSim was created
+by Roger Mark, based on an analog model of JG Defares and colleagues. The CVSim
+model was elaborated by Thomas Heldt, Eun Bo Shim, Roger Kamm, and Roger Mark.
+\\
+
+\noindent Development of CVSim was funded by the National Aeronautics and Space
+Administration (NASA) through the NASA Cooperative Agreement NCC 9-58
+with the National Space Biomedical Research Institute.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Running CVSim via Java Web Start}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The easiest way to run CVSim is using a web browser with Java Web Start
+installed.
+
+\subsection{Supported Platforms}
+Running CVSim via Java Web Start has been tested on the following
+platforms:
+
+\begin{itemize}
+\item Windows XP
+\item Mac OS X PPC
+\item Mac OS X i386
+\item Fedora Core 4, 5, and 7
+\item Red Hat Enterprise Linux 4
+\end{itemize}
+
+\noindent Running CVSim via Java Web Start is not supported on the following platforms:
+\begin{itemize}
+\item Solaris
+\end{itemize}
+
+\subsection{Installing Java Web Start}
+In order to run CVSim from a web browser, you need to
+install Java Web Start. Java Web Start is part of the Java Runtime
+Engine (JRE). \\
+
+\noindent \textbf{If you are using Windows:} Follow the \href{http://java.sun.com/javase/6/webnotes/install/index.html}{instructions}
+on the Sun website to install JRE 6.\\
+
+\noindent \textbf{If you are using Linux:} Follow the \href{http://java.sun.com/javase/6/webnotes/install/index.html}{instructions} on the Sun
+website to install JRE 6. You also need to manually 
+\href{http://java.sun.com/javase/6/webnotes/install/jre/manual-plugin-install-linux.html}{install} the Java
+Plug-in in your web browser.\\
+
+\noindent \textbf{If you are using Mac OS X:} Run Software Update from the System
+Preferences. Install Java for Mac OS X 10.4, Release 5.\\
+
+\noindent The first time you 
+\href{http://physionet.org/physiotools/cvsim/cvsim_deploy.jnlp}{run CVSim}
+, you will see a security warning that
+asks you, ``The application's digital signature cannot be verified. Do
+you want to run the application''. Click ``Run''. If you want to avoid
+that warning in the future, check the ``Always trust content from this
+publisher'' box. If you are using Internet Explorer, the security
+warning may be displayed behind your browser.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Building CVSim from the Source Code}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{System Requirements}
+
+In order to build CVSim, you need to have the following software installed:
+
+\begin{itemize}
+\item gcc, version 4.0.2 or higher 
+(See \href{http://gcc.gnu.org}{http://gcc.gnu.org})
+\item Simplified Wrapper Interface Generator (SWIG), version 1.3.29 or higher 
+(See http://www.swig.org)
+\item Java 2 Platform Standard Edition, version 5.0 Update 8 or later
+(See http://java.sun.com)
+\item GNU Make, version 3.80 or higher 
+(See http://www.gnu.org/software/make/)
+\end{itemize}
+
+\subsection{Obtaining the source code}
+
+The CVSim source code is available in a gzipped tar archive from
+\href{http://physionet.org/physiotools/cvsim/cvsim.tar.gz}{http://physionet.org/physiotools/cvsim/cvsim.tar.gz}.  Download this archive, and then unpack it by:
+
+\begin{verbatim}
+     tar xfvz src.tar.gz
+\end{verbatim}
+
+This will create a directory named \texttt{cvsim-NN} (where NN is the
+release number), containing subdirectories
+\texttt{devel} (code) and \texttt{doc} (documentation).
+
+\subsection{Compiling the Code}
+
+\noindent \textbf{If you are using Linux:}
+Navigate to the \texttt{devel} directory.  Rename
+\texttt{Makefile.include.root.linux} as
+\texttt{Makefile.include.root}, and edit this file to 
+reflect the location of your installation of gcc, SWIG, and Java. 
+At the command line, type \texttt{make}. \\
+
+\noindent \textbf{If you are using Mac OS X:}
+Navigate to the \texttt{devel} directory.  Rename
+\texttt{Makefile.include.root.osx} as
+\texttt{Makefile.include.root}, and edit this file to 
+reflect the location of your installation of gcc, SWIG, and Java. 
+At the command line, type \texttt{make}. \\
+
+\noindent \textbf{If you are using Windows:} Install and configure cygwin with all
+the required packages. Navigate to the \texttt{devel}
+directory. Rename \texttt{Makefile.include.root.windows} as
+\texttt{Makefile.include.root}, and edit this file to reflect your installation of
+gcc, SWIG, and Java. At the command line, type \texttt{make}.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Running the Code}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To run the code, navigate to the \texttt{classes} directory and type: \\
+
+\noindent \texttt{java -Djava.library.path=../../lib edu.mit.lcp.CVSim} \\
+
+\noindent The \texttt{-Djava.library.path=../../lib} tells Java where to find
+the native C libraries. The CVSim class in the edu.mit.lcp package
+contains the \texttt{main()} method.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{The Source Code}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Directory Structure}
+
+What follows is a brief tour of the directory structure. \\ 
+
+\noindent The top level of directories is \\
+
+\noindent \texttt{devel/} \hspace{1cm}
+          \texttt{doc/}  \\
+
+\noindent \texttt{devel/} is the main line of development. It's where
+all the code is. \texttt{doc/} is for project documentation, including
+this guide. In \texttt{devel/}, you will find a couple Makefiles, a shell
+script, and the following directories: \\
+
+\noindent \texttt{C/}    \hspace{1cm}     
+          \texttt{java/} \hspace{1cm}
+          \texttt{lib/}  \hspace{1cm}
+	  \texttt{swig/} \hspace{1cm} \\
+
+\noindent \texttt{C/} is for the C code (the model backend),
+\texttt{java/} is for the Java code (the GUI frontend), and
+\texttt{swig/} is for the SWIG interface that allows the two to work
+together. \texttt{lib/} is for the native C libraries generated from
+the C code and loaded by Java. The Makefiles are for building CVSim on
+Linux and Windows. The shell script, osx\_compile.sh, is for building
+the application on Mac OS X. (Using a cross-platform build tool such
+as Ant might be better than using a combination of Makefiles and shell
+scripts. Alas, I did not have the time to get so fancy.) \\
+
+\noindent Inside the C directory, you will find the source code for the
+6-compartment model (\texttt{6\_comp\_model}) and the 21-compartment model
+(\texttt{21\_comp\_model}). \\
+
+\noindent The java/ dir is organized in the standard way with separate
+directories for source and class files (\texttt{src/} and
+\texttt{classes/} respectively) and a subdirectory structure mirroring
+the package name (edu/mit/lcp). In other words, the Java source files
+(*.java) are in \texttt{src/edu/mit/lcp/} and the class files
+(*.class) are in \texttt{classes/edu/mit/lcp}. \\
+
+\end{document}

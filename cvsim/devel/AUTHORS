@@ -1,0 +1,12 @@
+This implementation of CVSim is the work of Catherine Dunn with support
+by Thomas Heldt and contributions from Brandon Pierquet and Ali Saeed.
+
+Previous implementations were written by Bob Sah (1983), George Moody (1985),
+Tim Davis (1989), Rama Mukkamala (2001), Thomas Heldt (2002), and by Eun Bo
+Shim and his students (2003). The circulatory model used in CVSim was created
+by Roger Mark, based on an analog model of JG Defares and colleagues. The CVSim
+model was elaborated by Thomas Heldt, Eun Bo Shim, Roger Kamm, and Roger Mark.
+
+Development of CVSim was funded by the National Aeronautics and Space
+Administration (NASA) through the NASA Cooperative Agreement NCC 9-58
+with the National Space Biomedical Research Institute.
