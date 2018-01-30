@@ -1,0 +1,445 @@
+<!--#set var="TITLE" value="CVSim"-->
+<!--#set var="USELOCALCSS" value="1"-->
+<!--#include virtual="/head.shtml"-->
+
+<div class="notice">
+<p>
+This software is described in
+
+<p class="reference">
+T Heldt, R Mukkamala, GB Moody, and RG Mark.
+<a href="45TOPETJ.pdf">CVSim: An Open-Source Cardiovascular Simulator for
+Teaching and Research</a>. <i>Open Pacing, Electrophysiol &amp; Ther J</i>
+<b>3</b>:45-54 (2010).
+</p>
+
+<p>
+<b>Please cite this publication when referencing this software, and also include
+the standard citation for PhysioNet:</b>
+
+<div class="reference">
+<p>Goldberger AL, Amaral LAN, Glass L, Hausdorff JM, Ivanov PCh, Mark RG,
+Mietus JE, Moody GB, Peng C-K, Stanley HE.  PhysioBank, PhysioToolkit, and
+PhysioNet: Components of a New Research Resource for Complex Physiologic
+Signals.
+<i>Circulation</i> <b>101</b>(23):e215-e220 [Circulation Electronic Pages;
+<a href="http://circ.ahajournals.org/content/101/23/e215.full"
+target="other">http://circ.ahajournals.org/content/101/23/e215.full</a>];
+2000 (June 13).
+</p>
+</div> <!-- end reference -->
+
+<p>
+If you teach using CVSim, please
+<a href="mailto:webmaster@physionet.org?subject=CVSim educational use">tell us
+about your course</a>.
+
+<p>
+The <b>CVSim</b> software was developed between 1983 and 2007, and four
+versions of it are available from PhysioNet:
+<ul>
+<li><a href="../xcvsim/"><b>XCVSim</b></a> (1991-1998), a 6-compartment model
+with an X11 GUI
+<li><a href="../rcvsim/"><b>RCVSim</b></a> (2000-2003), a 6-compartment model
+with a scriptable command-line interface
+<li><a href="#cvsim-6"><b>CVSim-6</b></a> (2002-2007), a 6-compartment model with a Java GUI (described
+below)
+<li><a href="#cvsim-21"><b>CVSim-21</b></a> (2002-2007),
+a 21-compartment model with an enhanced Java GUI (also described below)
+</ul>
+</div>
+
+<h1 align=center>CVSim: a cardiovascular simulator</h1>
+
+<p>
+<b>CVSim</b> is a lumped-parameter model of the human cardiovascular
+system that has been developed and used for research and for teaching
+quantitative physiology courses at MIT and Harvard Medical School since
+1984.  The versions presented here have a graphical user
+interface implemented in Java, with computational components in C.
+The portable C code has been compiled for popular platforms, and users
+of Linux (x86), Mac OS X (PPC and x86), and MS Windows (x86) should be
+able to use the links below to run CVsim.
+
+<p>
+<b>CVSim requires the 32-bit Sun/Oracle Java Runtime Environment (JRE
+6 or 7 but not later)</b>, running on a 32- or 64-bit version of Linux, Mac OS X, or
+MS-Windows.  CVSim will not run on 64-bit versions of
+the JRE, on any version of OpenJDK (IcedTea), or on Solaris.
+
+<p>
+CVSim has been tested successfully using 32-bit JRE 7 on 64-bit Windows 7 and 64-bit Windows 10;
+32-bit JRE 6 on 32-bit Windows XP, 32- and 64-bit Windows 7, Mac OS X (PPC, x86, and x86_64, 32-bit versions 10.4 and 10.5, and 64-bit 10.6), and many versions of 32- and 64-bit Linux including Fedora (4 through 19), Red Hat Enterprise
+Linux 4, and Ubuntu 8.04, 10.04, and 12.04.
+
+<a name="cvsim-6"><h2>Prerequisites for the Educational Version of CVSim (CVSim-6)</h2></a>
+
+<p>
+In order to run the educational version of CVSim,
+<b>Java Web Start</b> must be installed on your computer.  Since it is
+included in all recent versions of the Java Runtime Engine (JRE), this
+may have been done already.  If not:
+
+<ul>
+<b>Linux:</b> Install a <b>32-bit version</b> of JRE 6 (or JDK 6,
+ which includes JRE 6)
+ from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+ target="other">oracle.com</a>
+ or <a href="http://www.oracle.com/technetwork/java/javase/6/webnotes/install/"
+ target="other">java.sun.com</a>, then follow the instructions on
+ <a href="http://www.oracle.com/technetwork/java/javase/manual-plugin-install-linux-136395.html"
+ target="other">oracle.com</a> or <a
+href="http://www.oracle.com/technetwork/java/javase/6/webnotes/install/jre/manual-plugin-install-linux.html"
+target="other">java.sun.com</a> to install the Java plugin in your web browser.
+<br>
+<b>Mac OS X:</b> Run <b>Software Update</b> from <b>System Preferences</b>.
+Install Java for Mac OS X.  (If 64-bit versions become available, you will
+need to select a 32-bit version.)
+
+<br>
+<b>Windows:</b> Install a <b>32-bit version</b> of JRE 6 (or JDK 6,
+ which includes JRE 6)
+ from <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"
+ target="other">oracle.com</a>
+ or <a href="http://www.oracle.com/technetwork/java/javase/6/webnotes/install/"
+ target="other">java.sun.com</a>.
+</ul>
+
+<p>
+Some 64-bit browsers (such as 64-bit versions of IE 8) are incompatible with
+32-bit versions of Java.  If this is the case for your browser, install and
+use a 32-bit browser in order to install the 32-bit JRE and launch CVSim.  You
+do not need to change your OS or remove your 64-bit browser in order to do so.
+
+<p>
+You need to do this at most once on any computer on which you will
+use CVSim.  Restart your browser after installing or updating Java.
+
+<p>
+<b>Important!  If both 32- and 64-bit JREs are installed, the 32-bit JRE must
+have a newer version number.</b>  If both JREs have the same version number,
+or if the 64-bit JRE has a newer one, it will not be possible to launch the
+32-bit JRE successfully, and in this case you must uninstall the 64-bit JRE.
+For example, the presence of 64-bit JRE 7 will prevent 32-bit JRE 7 from
+launching, but 64-bit JRE 6 will not interfere with 32-bit JRE 7.  The
+instructions for uninstalling a Java package on Windows are at
+<a href="http://www.java.com/en/download/help/uninstall_java.xml"
+target="other">http://www.java.com/en/download/help/uninstall_java.xml</a>.
+
+<h2>Launching the Educational Version of CVSim</h2>
+
+<p>
+Once Java Web Start has been installed on your computer,
+one of the two links below can be used to start CVSim.
+
+<center>
+<a href="http://physionet.org/physiotools/cvsim/cvsim_deploy.jnlp">Launch
+CVSim [physionet.org]</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="cvsim_deploy.jnlp">Launch CVSim [alternate]</a>
+</center>
+
+<p>
+<b>PhysioNet mirror users:</b> Try the alternate link first. If it doesn't
+work, the first link can be used to launch CVSim from the master PhysioNet
+server.  When you attempt to launch CVSim, alerts about the risks of doing
+so will appear (see details for <a href="#jre6">JRE 6</a> and
+<a href="#jre7">JRE 7</a>).
+<p>
+<b>IcedTea Web Start:</b> On Linux (and perhaps on other platforms),
+your browser may suggest launching CVSim using the IcedTea Web Start
+application.  Try it if you wish, and please let us know if you are
+successful; as of this writing, we have not had success using IcedTea
+Web Start and we have not heard from anyone else who has.  As noted in
+the previous section, the Sun (now Oracle) JRE 6 or 7, its Java plugin, and
+its Web Start application are known to work and are recommended.  The
+Sun/Oracle Java Web Start application, <tt>javaws</tt>, is installed
+in <tt>/usr/java/jre1.<em>n.n_nn</em>/bin/javaws</tt> on Fedora Linux;
+this may vary on other platforms.
+
+<a name="cvsim-21"><h2>Research version of CVSIM (CVSim-21)</h2></a>
+
+<p>
+Sources for the research version of CVSim, which includes the
+six-compartment teaching model available above as well as a more
+detailed model containing 21 compartments, are available as
+a <a href="cvsim.tar.gz">gzip-compressed tar archive</a>, or you may
+get individual files from the <a href="cvsim/">source tree</a>.
+
+<p>
+Precompiled binaries of the research version of CVSim are also
+available for <a href="cvsim-linux.tar.gz">GNU/Linux</a>
+and <a href="cvsim-windows.zip">Windows</a>.  (These binaries must be
+downloaded and unpacked before they can be run.  Instructions for
+using them are included in each package.)
+
+<p>
+For reference, you may also wish to study an older implementation (see
+<a href="../rcvsim/">RCVSIM</a> or <a href="../xcvsim/">XCVSim</a>).
+
+<h1>Using CVSim</h1>
+
+<p>
+The notes below apply to both the educational and the research versions of
+CVSim.
+
+<h2>CVSim Window Components</h2>
+
+<p>
+The CVSim window is divided into four sections ("panes") and a toolbar:
+
+<p>
+<center><img src="images/cvsim_gui_annotated_small1.jpg"
+ title="[CVSim window]">
+</center>
+
+These components are briefly described here, and demonstrated in short Flash
+animations (click on the links below to see them).
+
+<h3>Simulation Control Toolbar</h3>
+
+<p>
+The <a href="demos/controls.htm">Simulation Control Toolbar</a>
+includes six controls to stop and start the simulation and turn the
+control systems on and off:
+
+<center><table width="50%" cellpadding=10>
+<tr><td><img src="images/go2.gif"></td><td>Start the simulation</td></tr>
+<tr><td><img src="images/stop3.gif"></td><td>Stop the simulation</td></tr>
+<tr><td><img src="images/ABgo4.gif"></td><td>Turn on the arterial baroreflex
+   control system</td></tr>
+<tr><td><img src="images/ABstop5.gif"></td><td>Turn off the arterial baroreflex
+   control system</td></tr>
+<tr><td><img src="images/CPgo6.gif"></td><td>Turn on the cardiopulmonary reflex
+   control system</td></tr>
+<tr><td><img src="images/CPstop7.gif"></td><td>Turn off the cardiopulmonary
+   reflex control system</td></tr>
+</table></center>
+
+<h3>Simulation Parameters Pane</h3>
+
+<p>
+The <a href="demos/variables.htm">Simulation Parameters Pane</a>
+displays the simulation variables and outputs.  (The Simulation Outputs
+Pane, which is located on a separate tab behind the Simulation Parameters
+Pane, is not functional in the current version of CVSim.  In a future version,
+it will be used to select outputs to be recorded in a log file.)
+
+<h3>Graphics Pane</h3>
+
+<p>
+The <a href="demos/graphics.htm">Graphics Pane</a> displays anatomical
+and circuit representations of the simulation model.
+
+<p>
+Click and drag the vertical bar between the <b>Simulation Parameters</b> and
+<b>Graphics</b> panes to resize them.
+
+<h3>Strip Chart and Plot Panes</h3>
+
+<p>
+The <b>Strip Chart</b> behaves like a chart recorder, plotting
+simulation outputs versus time and scrolling from right to left.  The
+<b>Plot Pane</b> behaves like a flatbed XY plotter, plotting
+simulation outputs versus one another.  Watch the <a
+href="demos/plots.htm">Strip Chart and Plot demo</a>.
+
+<p>
+Strip Chart and Plot panes can be undocked using the arrow icon at the
+upper right corner of the pane.  Once undocked, they can be moved and
+resized, and it is possible to view more than one of each simultaneously.
+(Select <b>New Strip Chart</b> or <b>New Plot</b> from the main window's
+Plot menu to create additional strip charts or plots.)
+
+
+<h2>Printing</h2>
+ 
+<p>
+There is no built-in facility for printing.  Linux
+users can take a snapshot of the screen using the <b>PrintScreen</b> key,
+or of a single window (such as an undocked strip chart pane) using
+<b>Alt</b>+<b>PrintScreen</b>.  Most image viewers (such as <tt>eog</tt>,
+<tt>gimp</tt>, <tt>gqview</tt>. or <tt>kview</tt>) can display and print
+these snapshots.  Similar facilities may be available on other platforms.
+
+<h2>Differences Between the Educational and Research Versions</h2>
+
+<p>
+The educational version includes the six-compartment model only, and there
+are minor user-interface differences with respect to the research version.
+Notably, the menu bar of the educational version includes a <b>Patient</b>
+menu;  selecting a patient allows a student to explore what perturbations
+of cardiovascular parameters might account for a given set of symptoms,
+and what interventions might be effective in improving the CV state of
+the virtual patient.  The research version includes both 6- and 21-compartment
+models (you must choose one of these at the beginning of the simulation),
+and offers greater flexibility in performing experiments using the model.
+The current research version allows the user to perform virtual tilt tests,
+for example.
+
+<h2>Java security</h2>
+
+<p>
+There are risks inherent in running Java as well as any other
+applications downloaded from the Internet.  We have checked CVSim very
+carefully to ensure that downloading and running it will not pose a
+risk to your privacy, your personal or other files, your computer, or
+those of anyone else.  JRE 7, and to a lesser extent JRE 6, will alert
+you with respect to the risks; the notes below summarize the alerts
+that you should expect to encounter when launching CVSim.
+
+<a name="jre7"><h3>Running on JRE 7</h3></a>
+
+<p>
+JRE 7 will alert you to the dangers of running untrusted Java applications
+at least 3 times before allowing you to do so.  The first of these alerts
+has the title <b>Application Blocked</b>, and the text
+
+<pre>
+Application Blocked by Security Settings<br>
+Your security settings have blocked a self-signed application from running
+</pre>
+
+<p>
+The workaround for this alert is described at
+<a href="http://www.java.com/en/download/help/java_blocked.xml"
+>http://www.java.com/en/download/help/java_blocked.xml</a> :
+
+<pre>
+Go to the Java Control Panel (On Windows, click Start and then Configure
+Java)<br>
+[On Windows 7, click the Windows logo at the lower left corner of the screen,
+then <b>All Programs</b>, then <b>Java</b>, then <b>Configure Java</b>.]</i><br>
+Click on the <b>Security</b> tab<br>
+Click on the <b>Edit Site List</b> button<br>
+Click the <b>Add</b> in the <b>Exception Site List</b> window<br>
+Click in the empty field under <b>Location</b> field to enter the URL
+</pre>
+
+<p>
+In the <b>Location</b> field, type
+<pre>
+     http://physionet.org
+</pre>
+<p>
+and click <b>OK</b>.  Now this window pops up:
+
+<pre>
+Including an HTTP Location on the Exception Site List is
+considered a security risk
+
+Location: http://physionet.org
+
+Locations that use HTTP are a security risk and may compromise the personal
+information on your computer.  We recommend including only HTTPS sites on
+the Exception Site List.
+
+Click <b>Continue</b> to accept this location or <b>Cancel</b> to abort this change.
+</pre>
+
+<p>
+Click <b>Continue</b>, then click <b>OK</b> again.  These alerts
+should not reappear on later use of CVSim.  Click again on the CVSim
+link, and a final alert (which will return on each use of CVSim) will
+appear:
+
+<pre>
+Security Warning
+
+Do you want to run this application?
+
+    Publisher:  UNKNOWN
+
+    Location:   http://physionet.org
+
+Running this application may be a security risk
+
+Risk:  This application will run with unrestricted access which may put
+       your computer and personal information at risk.  The information
+       provided is unreliable or unknown so it is recommended not to run
+       this application unless you are familiar with its source
+
+       More information
+
+Select the box below, then click <b>Run</b> to start the application
+
+[ ] I accept the risk and want to run this application   [Run] [Cancel]
+</pre>
+
+<p>
+Check the box and click <b>Run</b>.
+
+<a name="jre6"><h3>Running on JRE 6</h3></a>
+
+<p>
+The first time you run CVSim, a <a href="images/warning.png">
+warning</a> will appear. (<b>Internet Explorer users:</b> The security
+warning may be displayed behind your browser.)
+
+<p>
+Click <b>Run</b>. (To avoid the warning in the future, first check
+<b>Always trust content from this publisher</b>).
+
+<h2>Acknowledgments</h2>
+
+<p>
+This implementation of CVSim is the work of Catherine Dunn and Thomas Heldt,
+with contributions from Ali Saeed and Brandon Pierquet.
+
+<p>
+Previous implementations were written by Bob Sah (1983), George
+Moody (1985), Tim Davis (1989), Rama Mukkamala (2001), Thomas Heldt
+(2002), and by Eun Bo Shim and his students (2003).  The circulatory
+model used in CVSim was created by Roger Mark, based on an analog
+model of JG Defares and colleagues [2].  The CVSim model was
+elaborated by Thomas Heldt, Eun Bo Shim, Roger Kamm, and Roger Mark
+[3].
+
+<p>
+Development of CVSim was supported in part through the National 
+Aeronautics and Space Administration (NASA) Cooperative Agreement NCC 
+9-58 with the National Space Biomedical Research Institute (grants 
+CA00106, CA00205, and CA00403).
+
+<h2 id="references">References</h2></a>
+
+<p>
+[1] T Heldt, R Mukkamala, GB Moody, and RG Mark.
+<a href="45TOPETJ.pdf">CVSim: An Open-Source Cardiovascular Simulator for
+Teaching and Research</a>. <i>Open Pacing, Electrophysiol &amp; Ther J</i>
+<b>3</b>:45-54 (2010).</p>
+
+<p>
+[2] JG Defares, JJ Osborne, and HH Hara.
+<a href="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=retrieve&db=pubmed&list_uids=14168416&dopt=Abstract" target="other">
+Theoretical synthesis of the cardiovascular
+system. Study I: The controlled system</a>. <i>Acta Physiol Pharmacol
+Neerl</i> <b>12</b>:189-265 (1963). </p>
+
+<p>
+[3] T Heldt, EB Shim, RD Kamm, and RG Mark. <a
+href="http://jap.physiology.org/cgi/content/full/92/3/1239"
+target="other">Computational modeling of cardiovascular response to
+orthostatic stress</a>.
+<i>J Appl Physiol</i> <b>92</b>(3):1239-1254 (2002 March 1).</p>
+
+
+<h2>Related Links</h2>
+<ul>
+<li> <a href="../rcvsim/">A Cardiovascular Simulator for Research</a>.
+     <b>RCVSIM</b> is Rama Mukkamala's 2001 version of the CVSim model, and
+     was developed using MATLAB.  MATLAB is not required to run RCVSIM
+     under Linux.  The output of RCVSIM can be read and manipulated further
+     using the <a href="../wfdb.shtml">WFDB</a> software package.
+<li> <a href="../xcvsim/">XCVSim</a>.  Sources and Linux binaries for Tim
+     Davis's 1989 implementation of CVSim for X10 on MIT's Project Athena,
+     with revisions by George Moody for X11 on GNU/Linux and other Unix
+     platforms.
+<li> <a href="http://ocw.mit.edu/courses/health-sciences-and-technology/hst-542j-quantitative-physiology-organ-transport-systems-spring-2004/"
+     target="other">Quantitative Physiology: Organ Transport Systems</a>.
+     This MIT OpenCourseWare course is based on Roger Mark's spring 2004
+     course, which used XCVSim.  CVSim-6 was first used in this course in
+     spring 2007.
+</ul>
+
+<!--#include virtual="/dir-footer.shtml"-->

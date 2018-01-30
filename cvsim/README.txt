@@ -1,6 +1,4 @@
-CVSim Sources
-
-Release 1.0.1	Jan 2018
+# CVSim Sources
 
 This directory contains two subdirectories:
 
