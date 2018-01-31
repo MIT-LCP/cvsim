@@ -1,0 +1,51 @@
+Quick start for compiling CVSim:
+
+
+1. Install prerequisites if not already installed:
+
+   Install Sun's JDK 1.6 (Java 6 development kit), or a later version.
+
+   (Windows only) Install Cygwin, including the optional gcc and swig packages.
+   If you need them, step-by-step instructions are at
+
+	http://physionet.org/physiotools/cygwin/
+  
+   (Other platforms) Install gcc and swig. 
+
+   These packages are all freely available;  try a Google search to find
+   versions for your platform.
+
+   
+2. Navigate to this directory (devel).  Choose the correct template for
+   your platform from:
+
+   	Makefile.include.root.linux
+      	Makefile.include.root.osx
+      	Makefile.include.root.windows
+
+   and rename it Makefile.include.root . Check the locations of the gcc and
+   swig programs, and of the top-level JDK directory (JAVA_HOME).  Correct
+   these locations in Makefile.include.root if necessary.
+
+3. Rename the directories of sources within the C directory, replacing the
+   hyphens (-) in their names with underscores (_).  For example, on Linux
+   or Mac OS X, type:
+        mv C/6-comp-backend C/6_comp_backend
+	mv C/21-comp-backend C/21_comp_backend
+
+4. While still in this directory, type
+
+     	make
+  
+   This step compiles platform-specific binaries for both the 6- and
+   21-compartment models for using gcc, creates platform-specific
+   "glue" to link the models with the GUI using swig, and compiles the GUI
+   using javac (from the JDK).
+
+
+See the CVSIM Developer's Guide in the doc directory for more details if you
+need them.  Navigate to devel/java/classes and follow the instructions in
+00README to run CVSim.
+
+
+

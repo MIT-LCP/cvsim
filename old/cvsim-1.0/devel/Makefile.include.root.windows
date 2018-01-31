@@ -1,0 +1,10 @@
+JAVA_HOME	= /cygdrive/c/Program\ Files/Java/jdk1.6.0_01
+JDK_HOME	= $(JAVA_HOME)
+JRE_HOME	= $(JAVA_HOME)
+
+SWIG		= /usr/bin/swig
+CC		= /usr/bin/gcc
+CFLAGS		= -Iinclude -Iinclude32
+BUILDLIB	= gcc -mno-cygwin -Wl,--add-stdcall-alias -shared
+LIB6		= java/classes/C6_comp_backend.dll
+LIB21		= java/classes/C21_comp_backend.dll

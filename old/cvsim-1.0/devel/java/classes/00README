@@ -1,0 +1,12 @@
+Running CVSim
+
+1. Install JRE 1.6 or later.  (If you installed JDK 1.6 or later in order to
+   compile CVSim, you already have JRE 1.6 or later.)
+
+2. Type
+     ./run-cvsim
+
+3. Select the 6- or 21-compartment model and click OK.
+
+4. See the CVSim home page, http://physionet.org/physiotools/cvsim/, for
+   further details.

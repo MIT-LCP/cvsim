@@ -1,0 +1,10 @@
+JAVA_HOME	= /opt/jdk1.6.0_02
+JDK_HOME	= $(JAVA_HOME)
+JRE_HOME	= $(JAVA_HOME)
+
+SWIG		= /usr/bin/swig
+CC		= /usr/bin/gcc
+CFLAGS          = -fPIC -I$(JDK_HOME)/include -I$(JDK_HOME)/include/linux
+BUILDLIB	= ld -shared
+LIB6		= java/classes/libC6_comp_backend.so
+LIB21		= java/classes/libC21_comp_backend.so

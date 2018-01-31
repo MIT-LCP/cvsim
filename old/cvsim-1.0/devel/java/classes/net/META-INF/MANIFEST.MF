@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.6.1
+Created-By: NNL Technology AB
+Main-Class: net.infonode.docking.info.Info
+
+Name: net/infonode
+Implementation-Title: InfoNode Docking Windows GPL
+Implementation-Version: 1.4.0
+Implementation-Vendor: NNL Technology AB
+Implementation-URL: www.infonode.net
+Specification-Title: InfoNode Docking Windows GPL
+Specification-Version: 1.4.0
+Specification-Vendor: NNL Technology AB
+

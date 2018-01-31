@@ -1,0 +1,25 @@
+table {
+	border-spacing: 0;
+	border: 1px solid #000;
+	border-collapse: collapse;
+}
+table th, table td {
+	text-align: left;
+	padding: 2px 4px 2px 4px;
+	width: 100px;
+	border-style: solid;
+	border-color: #444;
+}
+table th {
+	border-width: 0px 1px 1px 1px;
+	background-color: #ccc;
+}
+table td {
+	border-width: 0px 1px 0px 1px;
+}
+table tr.odd td {
+	background-color: #ddd;
+}
+table tr.even td {
+	background-color: #fff;
+}

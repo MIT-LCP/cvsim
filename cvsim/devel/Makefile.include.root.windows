@@ -1,4 +1,4 @@
-JAVA_HOME	= /cygdrive/c/Program\ Files/Java/jdk1.6.0_01
+JAVA_HOME	= /cygdrive/c/Program\ Files/Java/jdk1.6.0_01  # set as necessary
 JDK_HOME	= $(JAVA_HOME)
 JRE_HOME	= $(JAVA_HOME)
 
