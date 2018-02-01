@@ -2,8 +2,9 @@
 
 1. Install JRE 1.8.
 
-2. Type
-     ./run-cvsim
+2. From the terminal, type:
+    - Linux and OSX: ./run-cvsim
+    - Windows: run-cvsim (or double click on the run-cvsim.bat file)
 
 3. Select the 6- or 21-compartment model and click OK.
 

@@ -1,4 +1,4 @@
-JAVA_HOME	= /usr/lib/jvm/java-8-openjdk-amd64  # set as necessary
+JAVA_HOME	= /usr/lib/jvm/java-8-openjdk-amd64
 JDK_HOME	= $(JAVA_HOME)
 JRE_HOME	= $(JAVA_HOME)
 

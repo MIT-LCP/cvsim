@@ -62,9 +62,9 @@ interface implemented in Java, with computational components in C.
 
 <h2>Code</h2>
 
-<p>The source files are available from the source tree, and from the gzip-compressed tar archive. CVSim has been successfully compiled using Java 1.6, 1.7, and 1.8 on 32 and 64 bit Linux, OSX, and Windows. To compile the source for your platform, follow the <em>README.txt</em> instructions in the <em>devel</em> subdirectory. Using the Java Development Kit (JDK) 1.8 is recommended.</p>
+<p>The source files are available from the <a href="cvsim">source tree</a>, and from the <a href="dist/cvsim-1.0.1.tar.gz">gzip-compressed tar archive</a>. CVSim has been successfully compiled using Java 1.6, 1.7, and 1.8 on 32 and 64 bit Linux, OSX, and Windows. To compile the source for your platform, follow the <em>README.txt</em> instructions in the <em>devel</em> subdirectory. Using the Java Development Kit (JDK) 1.8 is recommended.</p>
 
-<p>Compiled versions using Java 1.8 on 64-bit <a href="cvsim-linux.tar.gz">Ubuntu-Linux 16.04</a>, <a href="cvsim-osx.tar.gz">OSX 10.11</a>, and <a href="cvsim-windows.tar.gz">Windows 10</a>, are also provided.</p>
+<p>Compiled versions using Java 1.8 on 64-bit <a href="dist/cvsim-1.0.1-linux.tar.gz">Ubuntu-Linux 16.04</a>, <a href="dist/cvsim-1.0.1-osx.tar.gz">OSX 10.11</a>, and <a href="dist/cvsim-1.0.1-windows.zip">Windows 10</a>, are also provided.</p>
 
 <p>Issues regarding the code can be reported in the project's <a href="https://github.com/MIT-LCP/cvsim">github repository</a>.</p>
 
@@ -74,14 +74,21 @@ interface implemented in Java, with computational components in C.
 <p>Java is required to run CVSim. To use one of the compiled distributions:</p>
 
 <ul>
-  <li>Download and install the Java Runtime Environment (JRE) version 1.8. Note that the JDK contains the JRE, and other java delopment tools.</li>
+  <li>Download and install the Java Runtime Environment (JRE) version 1.8. Note that the JDK contains the JRE and other java delopment tools.</li>
   <ul>
-    <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html">JRE-8 installation instructions.</a></li>
-    <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">JRE-8 downloads.</a></li>
-    <li><a href="https://www.java.com/en/download/help/version_manual.xml">Determining your java version.</a></li>
+    <li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html" target="_blank">JRE-8 installation instructions.</a></li>
+    <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">JRE-8 downloads.</a></li>
+    <li><a href="https://www.java.com/en/download/help/version_manual.xml" target="_blank">Determining your java version.</a></li>
   </ul>
   <li>Download and extract the archive file for your system. See the links in the previous section.</li>
-  <li>Open a terminal (can be found under the name <code>terminal</code> in Ubuntu-Linux and OSX, and <code>cmd</code> in Windows), navigate to the code directory using the <code>cd</code> command, and type: <code>./run-cvsim</code>. Choose either the 6 or 21 compartment model (see below).</li>
+  <li>Run the program:</li>
+  <ul>
+    <li>Open a terminal (can be found under the name <code>terminal</code> in Ubuntu-Linux and OSX, and <code>cmd</code> in Windows).</li>
+    <li>Navigate to the extracted content directory using the <code>cd</code> command.</li>
+    <li>Type: <code>./run-cvsim</code> in Linux/OSX, or <code>run-cvsim</code> in Windows.</li>
+    <li>Alternatively in Windows, you can also just double click the <code>run-cvsim.bat</code> file without using a terminal.</li>
+  </ul>
+  <li>Choose either the 6 or 21 compartment model (see below).</li>
 </ul>
 
 
@@ -89,7 +96,7 @@ interface implemented in Java, with computational components in C.
 
 <p>The source code and compiled distributions contain content for both 6 and 21 compartment models of CVSim.</p>
 
-<p>The older implementations, <a href="physiotools/rcvsim/">RCVSim</a> and <a href="physiotools/xcvsim/">XCVSim</a>, are available in their respective Physiotools pages.</p>
+<p>The older implementations, <a href="/physiotools/rcvsim/">RCVSim</a> and <a href="/physiotools/xcvsim/">XCVSim</a>, are available in their respective Physiotools pages.</p>
 
 
 <h2>Using CVSim</h2>

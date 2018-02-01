@@ -1,4 +1,4 @@
-# JAVA_HOME	= /Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/  # set as necessary 
+# JAVA_HOME	= /Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/
 JDK_HOME	= $(JAVA_HOME)
 JRE_HOME	= $(JAVA_HOME)
 
