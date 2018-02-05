@@ -72,8 +72,8 @@ interface implemented in Java, with computational components in C.
     <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">JRE-8 downloads.</a></li>
     <li><a href="https://www.java.com/en/download/help/version_manual.xml" target="_blank">Determining your java version.</a></li>
   </ul>
-  <li>Download the compiled CVSim archive file for your system: <a href="dist/cvsim-1.0.1-linux.tar.gz">Linux</a>, <a href="dist/cvsim-1.0.1-osx.tar.gz">OSX</a>, <a href="dist/cvsim-1.0.1-windows.zip">Windows</a>.</li>
-  <li>Extract the contents of the downloaded archive file.</li>
+  <li>Download and save the compiled CVSim archive file for your system: <a href="dist/cvsim-1.0.1-linux.tar.gz">Linux</a>, <a href="dist/cvsim-1.0.1-osx.tar.gz">OSX</a>, <a href="dist/cvsim-1.0.1-windows.zip">Windows</a>.</li>
+  <li>Extract (unzip) the contents of the downloaded archive file.</li>
   <li>Run the program. The script to be executed is: <strong><code>run-cvsim</code></strong>.
   <ul>
     <li>Windows users can just double click the <strong><code>run-cvsim.bat</code></strong> file.</li>
